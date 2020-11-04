@@ -21,7 +21,7 @@ d.	make modules_install
 
 		Output: QEMU emulator version 4.2.1 (Debian 1:4.2-3ubuntu6.8)
 		Copyright (c) 2003-2019 Fabrice Bellard and the QEMU Project developers 
-12.	Run command “sudo apt-get install virt-manager” to install virt-manager
+12.	Run command “sudo apt-get install virt-manager” to install virt-manager, then install nested VM
 13.	Modiy “~/linux/arch/x86/kvm/cpuid.c” from the linux repository. Add leaf function at int kvm_emulate_cpuid(struct kvm_vcpu *vcpu) method
 
 
@@ -42,7 +42,7 @@ d.	make modules_install
 		static void meassureTotalTime(int startTime){
 			atomic64_add(rdtsc() - startTime, &total_time);}
 15.	Do step 7 again
-16.	Run tests
+16.	Run tests in nested VM
 
 		Output: CPUID(0x4FFFFFFF), exits=6094758, cycles spent in exit=1632123150
 
