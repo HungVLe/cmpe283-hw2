@@ -3,7 +3,8 @@
 2.	Run command “sudo bash” to login to root mode bash
 3.	Run command “apt-get install build-essential kernel-package fakeroot libncurses5-dev libssl-dev ccache bison flex libelf-dev” to install essential packages for building kernel
 4.	Run command “uname -a”. Copy the kernel version.
-Output: Linux ubuntu 5.4.0-52-generic #57-Ubuntu SMP Thu Oct 15 10:57:00 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+
+		Output: Linux ubuntu 5.4.0-52-generic #57-Ubuntu SMP Thu Oct 15 10:57:00 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
 5.	Run command “cp /boot/config-4.15.0-112-generic ./.config”
 6.	Run command “make oldconfig” (Holding down enter to have default settings)
 7.	Run the following commands in sequence:
