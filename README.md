@@ -20,19 +20,20 @@ Output: QEMU emulator version 4.2.1 (Debian 1:4.2-3ubuntu6.8)
 Copyright (c) 2003-2019 Fabrice Bellard and the QEMU Project developers 
 12.	Run command “sudo apt-get install virt-manager” to install virt-manager
 13.	Modiy “~/linux/arch/x86/kvm/cpuid.c” from the linux repository. Add leaf function at int kvm_emulate_cpuid(struct kvm_vcpu *vcpu) method
-/*CMPE 283 Assignment 2*/
-	if(eax == 0x4FFFFFFF){
-		pr_info("CMPE 283 Leaf function for eax == 0x4FFFFFFF");
-		kvm_cpuid(vcpu, &eax, &ebx, &ecx, &edx, false);
 
-		eax = atomic64_read(&number_of_exits);
-		pr_info("The total number of exits (all types) in eax=%u", eax);
 
-		ebx = (atomic64_read(&total_time) >> 32);
-		pr_info("The high 32 bits of the total time spent processing all exits in ebx=%u", ebx);
-		
-		ecx = ((atomic64_read(&total_time) >> 32) << 32);
-		pr_info("The low 32 bits of the total time spent processing all exits in ecx=%u", ecx);}
+		if(eax == 0x4FFFFFFF){
+			pr_info("CMPE 283 Leaf function for eax == 0x4FFFFFFF");
+			kvm_cpuid(vcpu, &eax, &ebx, &ecx, &edx, false);
+
+			eax = atomic64_read(&number_of_exits);
+			pr_info("The total number of exits (all types) in eax=%u", eax);
+
+			ebx = (atomic64_read(&total_time) >> 32);
+			pr_info("The high 32 bits of the total time spent processing all exits in ebx=%u", ebx);
+
+			ecx = ((atomic64_read(&total_time) >> 32) << 32);
+			pr_info("The low 32 bits of the total time spent processing all exits in ecx=%u", ecx);}
 14.	Modify “~/linux/arch/x86/kvm/vmx/vmx.c” from the linux repository. Define the counter to measure the numbers of exits and total time in processor cycles.
 /*CMPE 283 Assignment 2*/
 static void meassureTotalTime(int startTime){
