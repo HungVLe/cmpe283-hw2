@@ -39,8 +39,7 @@ d.	make modules_install
 14.	Modify “~/linux/arch/x86/kvm/vmx/vmx.c” from the linux repository. Define the counter to measure the numbers of exits and total time in processor cycles.
 
 		static void meassureTotalTime(int startTime){
-			atomic64_add(rdtsc() - startTime, &total_time);
-}
+			atomic64_add(rdtsc() - startTime, &total_time);}
 15.	Do step 7 again
 16.	Run tests
 
