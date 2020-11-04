@@ -1128,7 +1128,7 @@ int kvm_emulate_cpuid(struct kvm_vcpu *vcpu)
 		ebx = (atomic64_read(&total_time) >> 32);
 		pr_info("The high 32 bits of the total time spent processing all exits in ebx=%u", ebx);
 		
-		ecx = ((atomic64_read(&total_time) >> 32) << 32);
+		ecx = ((atomic64_read(&total_time) << 32) >> 32);
 		pr_info("The low 32 bits of the total time spent processing all exits in ecx=%u", ecx);
 
 	} else {
