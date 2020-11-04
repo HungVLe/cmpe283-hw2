@@ -55,7 +55,7 @@ d.	make modules_install
 		such as EXIT_REASON_EPT_VIOLATION, EXIT_REASON_MSR_WRITE, EXIT_REASON_MSR_WRITE, etc.
 2. Approximately how many exits does a full VM boot entail?
 		
-		There will be 609475 for a a full VM boot entail.
+		There will be 609475 for a full VM boot entail.
 
 
 
