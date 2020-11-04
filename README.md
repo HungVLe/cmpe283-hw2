@@ -43,7 +43,7 @@ d.	make modules_install
 15.	Do step 7 again
 16.	Run tests
 
-		Output: CPUID(0x4FFFFFFF), exits=31854294, cycles spent in exit=1056348271
+		Output: CPUID(0x4FFFFFFF), exits=6094758, cycles spent in exit=1632123150
 
 
 #Questions
@@ -53,6 +53,8 @@ d.	make modules_install
 		There are more exits performed during certain VM operations, 
 		such as EXIT_REASON_EPT_VIOLATION, EXIT_REASON_MSR_WRITE, EXIT_REASON_MSR_WRITE, etc.
 2. Approximately how many exits does a full VM boot entail?
+		
+		There will be 609475 for a a full VM boot entail.
 
 
 
