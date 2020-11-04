@@ -1,3 +1,4 @@
+#Step in details
 1.	Clone the repository for linux
 2.	Run command “sudo bash” to login to root mode bash
 3.	Run command “apt-get install build-essential kernel-package fakeroot libncurses5-dev libssl-dev ccache bison flex libelf-dev” to install essential packages for building kernel
@@ -38,8 +39,13 @@ static void meassureTotalTime(int startTime){
 	atomic64_add(rdtsc() - startTime, &total_time);
 }
 15.	Do step 7 again
+16.	Run tests
+Output: CPUID(0x4FFFFFFF), exits=31294, cycles spent in exit=1056348271
 
 
+#Questions
+1. Does the number of exits increase at a stable rate? Or are there more exits performed during certain VM operations? 
+2. Approximately how many exits does a full VM boot entail?
 
 
 
