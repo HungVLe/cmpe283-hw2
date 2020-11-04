@@ -43,11 +43,15 @@ d.	make modules_install
 15.	Do step 7 again
 16.	Run tests
 
-		Output: CPUID(0x4FFFFFFF), exits=31294, cycles spent in exit=1056348271
+		Output: CPUID(0x4FFFFFFF), exits=31854294, cycles spent in exit=1056348271
 
 
 #Questions
 1. Does the number of exits increase at a stable rate? Or are there more exits performed during certain VM operations? 
+
+		No, the number of exits does not increase at a stable rate. 
+		There are more exits performed during certain VM operations, 
+		such as EXIT_REASON_EPT_VIOLATION, EXIT_REASON_MSR_WRITE, EXIT_REASON_MSR_WRITE, etc.
 2. Approximately how many exits does a full VM boot entail?
 
 
