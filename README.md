@@ -34,7 +34,7 @@ d.	make modules_install
 			ebx = (atomic64_read(&total_time) >> 32);
 			pr_info("The high 32 bits of the total time spent processing all exits in ebx=%u", ebx);
 
-			ecx = ((atomic64_read(&total_time) >> 32) << 32);
+			ecx = ((atomic64_read(&total_time) << 32) >> 32);
 			pr_info("The low 32 bits of the total time spent processing all exits in ecx=%u", ecx);}
 14.	Modify “~/linux/arch/x86/kvm/vmx/vmx.c” from the linux repository. Define the counter to measure the numbers of exits and total time in processor cycles.
 
